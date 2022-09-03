@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  SigninViewController.swift
 //  AnimeUwU
 //
 //  Created by KhaleD HuSsien on 03/09/2022.
@@ -7,28 +7,30 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class SigninViewController: UIViewController {
     
-    
-    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var signinButton: UIButton!
     @IBOutlet weak var checkmarkButton: UIButton!
     var isChecked =  false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = .systemGreen
-        setUpDesign()
+        signinButton.layer.cornerRadius = signinButton.frame.width / 13
+            setUpDesign()
     }
     
+    //MARK: - function
     func setUpDesign(){
         self.checkmarkButton.layer.cornerRadius = 10
         self.checkmarkButton.layer.borderColor = UIColor.systemGreen.cgColor
         self.checkmarkButton.layer.borderWidth = 2
-        signupButton.layer.cornerRadius = signupButton.frame.width / 13
+        signinButton.layer.cornerRadius = signinButton.frame.width / 13
         navigationItem.backButtonTitle = ""
         
         
     }
-    //MARK: - Actions
+    //MARK: - actions
     @IBAction func checkmarkButtonTapped(_ sender: UIButton) {
         if !isChecked{
             checkmarkButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
@@ -38,13 +40,13 @@ class RegisterViewController: UIViewController {
             isChecked = false
         }
     }
-    
-    @IBAction func signUpButtonTapped(_ sender: UIButton) {
-        print("created successfully")
-    }
     @IBAction func signinButtonTapped(_ sender: UIButton) {
-        let controller = SigninViewController.instantiate()
+        print("Log in :)")
+    }
+    @IBAction func signupButtonTapped(_ sender: UIButton) {
+        let controller = RegisterViewController.instantiate()
         navigationController?.pushViewController(controller, animated: true)
     }
+    
     
 }

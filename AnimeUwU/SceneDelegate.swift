@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if UserDefaults.standard.hasOnboarded {
             controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StartingNC")as! UINavigationController
         }else{
-            controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController")as! OnboardingViewController
+            controller = OnboardingViewController.instantiate()
         }
         window?.rootViewController = controller
         window?.makeKeyAndVisible()
