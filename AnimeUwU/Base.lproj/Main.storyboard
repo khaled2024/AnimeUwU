@@ -520,6 +520,12 @@
                     </view>
                     <connections>
                         <outlet property="checkmarkButton" destination="T0o-PW-8Qd" id="TAj-5e-i0W"/>
+                        <outlet property="emailImageView" destination="M8Q-E6-loL" id="33m-Q7-zFP"/>
+                        <outlet property="emailTF" destination="QEQ-wT-8NN" id="wka-ZD-iCI"/>
+                        <outlet property="emailView" destination="Sqt-7G-o4W" id="do6-VD-BU4"/>
+                        <outlet property="passwordImageView" destination="937-gI-dkO" id="bNb-PN-Bau"/>
+                        <outlet property="passwordTF" destination="hX8-Nb-4QD" id="03r-27-9Xr"/>
+                        <outlet property="passwordView" destination="YX0-rg-Tki" id="UcV-48-gkx"/>
                         <outlet property="signupButton" destination="k4P-hL-deN" id="vtO-SW-hiO"/>
                     </connections>
                 </viewController>
@@ -717,6 +723,12 @@
                     </view>
                     <connections>
                         <outlet property="checkmarkButton" destination="yFT-H8-BiZ" id="y9d-wh-M0r"/>
+                        <outlet property="emailImageView" destination="vGU-cz-atf" id="Oa2-DG-xxb"/>
+                        <outlet property="emailTF" destination="du6-jO-T1H" id="x3e-0l-LtU"/>
+                        <outlet property="emailView" destination="sNL-eZ-7Vr" id="Gjm-DM-1EX"/>
+                        <outlet property="passwordImageView" destination="R86-xw-nw4" id="PYs-wA-QcU"/>
+                        <outlet property="passwordTF" destination="Zwr-0s-eaF" id="noe-Gm-6nq"/>
+                        <outlet property="passwordView" destination="c6c-Lp-ux7" id="izX-8Q-W1u"/>
                         <outlet property="signinButton" destination="cyl-az-Xez" id="EJv-8I-JWv"/>
                     </connections>
                 </viewController>
