@@ -9,16 +9,46 @@ import UIKit
 
 class TopHitsAnimeViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    var topHitsAnime : [Anime] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Top Hits Anime"
         let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .semibold)]
         UINavigationBar.appearance().titleTextAttributes = attributes
+        topHitsAnime = [
+            Anime(image: UIImage(named: "swordArtOnline2")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
+            Anime(image: UIImage(named: "swordArtOnline")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
+            Anime(image: UIImage(named: "swordArtOnline2")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
+            Anime(image: UIImage(named: "swordArtOnline")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
+            Anime(image: UIImage(named: "swordArtOnline2")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
+        ]
+        registerCell()
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .label
         
     }
+    func registerCell(){
+        tableView.register(UINib(nibName: AnimeTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AnimeTableViewCell.identifier)
+    }
+    
+}
+extension TopHitsAnimeViewController: UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        topHitsAnime.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: AnimeTableViewCell.identifier, for: indexPath)as! AnimeTableViewCell
+        let anime = topHitsAnime[indexPath.row]
+        cell.config(anime: AnimeTopHitsViewModel(image: anime.image, rating: anime.rating, title: anime.title, year: anime.year, description: anime.description))
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
     
 }

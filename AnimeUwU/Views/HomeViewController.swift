@@ -16,7 +16,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var LogoOpacityView: UIView!
     @IBOutlet weak var LogoImageView: UIImageView!
         // vars
-    var anime: [Anime] = []
+    var animes: [Anime] = []
+
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +25,17 @@ class HomeViewController: UIViewController {
         topHitsAnimeCollectionView.dataSource = self
         newEpisodeReleasesCollectionView.delegate = self
         newEpisodeReleasesCollectionView.dataSource = self
-        anime = [
-            Anime(image: UIImage(named: "swordArtOnline")!, rating: "9.8"),
-            Anime(image: UIImage(named: "swordArtOnline2")!, rating: "9.0"),
-            Anime(image: UIImage(named: "swordArtOnline")!, rating: "7.9"),
-            Anime(image: UIImage(named: "swordArtOnline2")!, rating: "9.0"),
-            Anime(image: UIImage(named: "swordArtOnline")!, rating: "6.9")
-            
+        animes = [
+            Anime(image: UIImage(named: "swordArtOnline")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
+            Anime(image: UIImage(named: "swordArtOnline")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
+            Anime(image: UIImage(named: "swordArtOnline")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
+            Anime(image: UIImage(named: "swordArtOnline")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
+            Anime(image: UIImage(named: "swordArtOnline")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
         ]
         setUpDesign()
         registerCells()
+        
+
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.tintColor = .white
@@ -70,7 +72,10 @@ class HomeViewController: UIViewController {
         newEpisodeReleasesCollectionView.register(UINib(nibName: TopHitsAnimeCollectionViewCell.identifer, bundle: nil), forCellWithReuseIdentifier: TopHitsAnimeCollectionViewCell.identifer)
     }
     @objc func didTappedSearch(){
-        print("searchClicked")
+        
+        let controller = SearchViewController.instantiate()
+        navigationController?.pushViewController(controller, animated: true)
+        
     }
     //MARK: - Actions
     @IBAction func seeAllTopHitsAnimeTapped(_ sender: UIButton) {
@@ -89,9 +94,9 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == topHitsAnimeCollectionView {
-            return anime.count
+            return animes.count
         }else{
-            return anime.count
+            return animes.count
         }
     }
     
@@ -100,13 +105,15 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopHitsAnimeCollectionViewCell.identifer, for: indexPath) as? TopHitsAnimeCollectionViewCell else{
                 return UICollectionViewCell()
             }
-            cell.config(anime: anime[indexPath.row])
+            let anime = animes[indexPath.row]
+            cell.config(anime: AnimeViewModel(image: anime.image, rating: anime.rating))
             return cell
         }else{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopHitsAnimeCollectionViewCell.identifer, for: indexPath) as? TopHitsAnimeCollectionViewCell else{
                 return UICollectionViewCell()
             }
-            cell.config(anime: anime[indexPath.row])
+            let anime = animes[indexPath.row]
+            cell.config(anime: AnimeViewModel(image: anime.image, rating: anime.rating))
             return cell
         }
         

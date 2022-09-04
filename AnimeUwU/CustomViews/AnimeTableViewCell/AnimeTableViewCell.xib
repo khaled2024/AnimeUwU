@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="270" id="KGk-i7-Jjw" customClass="AnimeTableViewCell" customModule="AnimeUwU" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="383" height="270"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="383" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-4a-dHc">
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="270"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swordArtOnline2" translatesAutoresizingMaskIntoConstraints="NO" id="0Sn-Lo-Kgr">
+                                <rect key="frame" x="10" y="10" width="149" height="250"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03f-63-sxt">
+                                <rect key="frame" x="15" y="20" width="30" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voy-XW-xJb">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.28785347570000003" green="0.71764707569999997" blue="0.0063218126860000003" alpha="0.94163907280000003" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="Voy-XW-xJb" firstAttribute="leading" secondItem="03f-63-sxt" secondAttribute="leading" id="5WM-Ij-89y"/>
+                                    <constraint firstAttribute="width" constant="30" id="Vqf-Pv-rjT"/>
+                                    <constraint firstAttribute="bottom" secondItem="Voy-XW-xJb" secondAttribute="bottom" id="ZSp-d3-w8s"/>
+                                    <constraint firstAttribute="height" constant="30" id="aiZ-aC-N6y"/>
+                                    <constraint firstAttribute="trailing" secondItem="Voy-XW-xJb" secondAttribute="trailing" id="l9z-zQ-qKw"/>
+                                    <constraint firstItem="Voy-XW-xJb" firstAttribute="top" secondItem="03f-63-sxt" secondAttribute="top" id="t5i-XM-ZbI"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yMI-RG-P4X">
+                                <rect key="frame" x="164" y="20" width="204" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attack on titan Final Season Part 2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeK-Yj-cuP">
+                                        <rect key="frame" x="0.0" y="0.0" width="204" height="46"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022 | Japan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kik-tw-Cs0">
+                                        <rect key="frame" x="0.0" y="56" width="204" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attack on titan Final Season Part 2 Attack on titan Final Season Part 2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad1-Yc-4Ie">
+                                        <rect key="frame" x="0.0" y="89" width="204" height="101"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3p-9X-zA7">
+                                        <rect key="frame" x="52" y="200" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.34117650989999998" green="0.74509805439999999" blue="0.34901961679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="8MP-DV-RjK"/>
+                                            <constraint firstAttribute="height" constant="30" id="lNF-Ua-WKl"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="My List" imagePadding="5">
+                                            <imageReference key="image" image="plus" catalog="system" symbolScale="default"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="p3p-9X-zA7" firstAttribute="centerX" secondItem="Ad1-Yc-4Ie" secondAttribute="centerX" id="8AO-H3-esL"/>
+                                    <constraint firstItem="Ad1-Yc-4Ie" firstAttribute="leading" secondItem="yMI-RG-P4X" secondAttribute="leading" id="9gi-mn-686"/>
+                                    <constraint firstItem="Kik-tw-Cs0" firstAttribute="trailing" secondItem="aeK-Yj-cuP" secondAttribute="trailing" id="9sM-XQ-hdB"/>
+                                    <constraint firstAttribute="trailing" secondItem="aeK-Yj-cuP" secondAttribute="trailing" id="Bt9-bq-Ls4"/>
+                                    <constraint firstItem="aeK-Yj-cuP" firstAttribute="height" secondItem="yMI-RG-P4X" secondAttribute="height" multiplier="0.2" id="JQ1-b2-YZd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ad1-Yc-4Ie" secondAttribute="trailing" id="MSu-Nb-tVW"/>
+                                    <constraint firstItem="Kik-tw-Cs0" firstAttribute="height" secondItem="yMI-RG-P4X" secondAttribute="height" multiplier="0.1" id="Ql0-hf-5os"/>
+                                    <constraint firstItem="Kik-tw-Cs0" firstAttribute="leading" secondItem="aeK-Yj-cuP" secondAttribute="leading" id="oiy-ee-ZDN"/>
+                                    <constraint firstItem="aeK-Yj-cuP" firstAttribute="leading" secondItem="yMI-RG-P4X" secondAttribute="leading" id="zVV-Xg-8Pk"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yMI-RG-P4X" firstAttribute="leading" secondItem="0Sn-Lo-Kgr" secondAttribute="trailing" constant="5" id="BFI-hj-GvT"/>
+                            <constraint firstItem="0Sn-Lo-Kgr" firstAttribute="width" secondItem="qHN-4a-dHc" secondAttribute="width" multiplier="0.4" id="Ehp-jq-zcf"/>
+                            <constraint firstAttribute="trailing" secondItem="yMI-RG-P4X" secondAttribute="trailing" constant="5" id="J62-zN-P6w"/>
+                            <constraint firstItem="03f-63-sxt" firstAttribute="leading" secondItem="0Sn-Lo-Kgr" secondAttribute="leading" constant="5" id="N7k-cw-ili"/>
+                            <constraint firstItem="yMI-RG-P4X" firstAttribute="top" secondItem="0Sn-Lo-Kgr" secondAttribute="top" constant="10" id="TSE-kQ-nGm"/>
+                            <constraint firstAttribute="bottom" secondItem="0Sn-Lo-Kgr" secondAttribute="bottom" constant="10" id="Ykx-ck-LD4"/>
+                            <constraint firstItem="yMI-RG-P4X" firstAttribute="bottom" secondItem="0Sn-Lo-Kgr" secondAttribute="bottom" constant="-10" id="ab7-HL-slc"/>
+                            <constraint firstItem="0Sn-Lo-Kgr" firstAttribute="leading" secondItem="qHN-4a-dHc" secondAttribute="leading" constant="10" id="hx8-09-Szm"/>
+                            <constraint firstItem="0Sn-Lo-Kgr" firstAttribute="top" secondItem="qHN-4a-dHc" secondAttribute="top" constant="10" id="tIe-9R-0UN"/>
+                            <constraint firstItem="03f-63-sxt" firstAttribute="top" secondItem="0Sn-Lo-Kgr" secondAttribute="top" constant="10" id="tkd-FU-Cr0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="qHN-4a-dHc" secondAttribute="trailing" constant="10" id="25U-RM-cy3"/>
+                    <constraint firstAttribute="bottom" secondItem="qHN-4a-dHc" secondAttribute="bottom" id="4ml-x9-cyO"/>
+                    <constraint firstItem="qHN-4a-dHc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BDQ-X2-aZy"/>
+                    <constraint firstItem="qHN-4a-dHc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SiP-4e-ISz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="15"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="animeImageView" destination="0Sn-Lo-Kgr" id="m2P-pN-h2g"/>
+                <outlet property="animeNameLable" destination="aeK-Yj-cuP" id="saE-3p-9V8"/>
+                <outlet property="animeYearLable" destination="Kik-tw-Cs0" id="Ogi-so-oPX"/>
+                <outlet property="descriptionLable" destination="Ad1-Yc-4Ie" id="6QB-mx-qj1"/>
+                <outlet property="myListButton" destination="p3p-9X-zA7" id="OeX-SH-fwU"/>
+                <outlet property="ratingLable" destination="Voy-XW-xJb" id="KXQ-L5-iYD"/>
+            </connections>
+            <point key="canvasLocation" x="257.24637681159425" y="106.47321428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="swordArtOnline2" width="720" height="368"/>
+    </resources>
+</document>

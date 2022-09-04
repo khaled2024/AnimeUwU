@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="269" height="312"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swordArtOnline2" translatesAutoresizingMaskIntoConstraints="NO" id="BCA-ug-Gk8">
-                                <rect key="frame" x="0.0" y="0.0" width="269" height="312"/>
+                                <rect key="frame" x="5" y="5" width="259" height="302"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
@@ -29,7 +29,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5V-TZ-ypE">
-                                <rect key="frame" x="15" y="15" width="30" height="30"/>
+                                <rect key="frame" x="10" y="15" width="30" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMd-cI-wZb">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -62,12 +62,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BCA-ug-Gk8" firstAttribute="top" secondItem="J79-OF-lDK" secondAttribute="top" id="4Fl-RN-ubd"/>
-                            <constraint firstItem="BCA-ug-Gk8" firstAttribute="leading" secondItem="J79-OF-lDK" secondAttribute="leading" id="Asx-ej-mX4"/>
-                            <constraint firstItem="l5V-TZ-ypE" firstAttribute="leading" secondItem="J79-OF-lDK" secondAttribute="leading" constant="15" id="GVW-WQ-06V"/>
-                            <constraint firstAttribute="trailing" secondItem="BCA-ug-Gk8" secondAttribute="trailing" id="RqP-l3-Pj5"/>
-                            <constraint firstAttribute="bottom" secondItem="BCA-ug-Gk8" secondAttribute="bottom" id="jU6-6b-OPR"/>
-                            <constraint firstItem="l5V-TZ-ypE" firstAttribute="top" secondItem="J79-OF-lDK" secondAttribute="top" constant="15" id="zlI-kq-ATs"/>
+                            <constraint firstItem="l5V-TZ-ypE" firstAttribute="top" secondItem="BCA-ug-Gk8" secondAttribute="top" constant="10" id="38I-qT-P7i"/>
+                            <constraint firstItem="BCA-ug-Gk8" firstAttribute="top" secondItem="J79-OF-lDK" secondAttribute="top" constant="5" id="4Fl-RN-ubd"/>
+                            <constraint firstItem="BCA-ug-Gk8" firstAttribute="leading" secondItem="J79-OF-lDK" secondAttribute="leading" constant="5" id="Asx-ej-mX4"/>
+                            <constraint firstAttribute="trailing" secondItem="BCA-ug-Gk8" secondAttribute="trailing" constant="5" id="RqP-l3-Pj5"/>
+                            <constraint firstAttribute="bottom" secondItem="BCA-ug-Gk8" secondAttribute="bottom" constant="5" id="jU6-6b-OPR"/>
+                            <constraint firstItem="l5V-TZ-ypE" firstAttribute="leading" secondItem="BCA-ug-Gk8" secondAttribute="leading" constant="5" id="loW-BU-Q4G"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

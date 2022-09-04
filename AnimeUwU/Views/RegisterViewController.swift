@@ -8,6 +8,7 @@
 import UIKit
 import ProgressHUD
 import Firebase
+//import AuthenticationServices
 class RegisterViewController: UIViewController {
     
     //MARK: - outlets & vars
