@@ -17,13 +17,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         var controller = UIViewController()
-        if UserDefaults.standard.hasOnboarded {
+        if UserDefaults.standard.hasLogin{
+//            controller = HomeViewController.instantiate()
+            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar")as! UITabBarController
+            controller.navigationItem.backButtonTitle = ""
+//            let nav = UINavigationController(rootViewController: controller)
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .flipHorizontal
+            window?.rootViewController = controller
+            
+        }else if UserDefaults.standard.hasOnboarded{
             controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StartingNC")as! UINavigationController
-        }else{
-            controller = OnboardingViewController.instantiate()
+            window?.rootViewController = controller
+            window?.makeKeyAndVisible()
         }
-        window?.rootViewController = controller
-        window?.makeKeyAndVisible()
+        else{
+            controller = OnboardingViewController.instantiate()
+            window?.rootViewController = controller
+            window?.makeKeyAndVisible()
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

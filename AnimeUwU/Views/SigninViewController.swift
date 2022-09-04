@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import ProgressHUD
+import Firebase
 class SigninViewController: UIViewController {
     
     @IBOutlet weak var passwordImageView: UIImageView!
@@ -34,10 +35,36 @@ class SigninViewController: UIViewController {
         navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.tintColor = .systemGreen
         signinButton.layer.cornerRadius = signinButton.frame.width / 13
-        
-        
     }
     //MARK: - actions
+    //sign in
+    @IBAction func signinButtonTapped(_ sender: UIButton) {
+        guard let email = emailTF.text ,!email.isEmpty , let pass = passwordTF.text ,!pass.isEmpty else{
+            ProgressHUD.showError("Missing field data!")
+            return
+        }
+        // firebase Auth
+        ProgressHUD.show()
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: pass) {[weak self] _, error in
+            guard error == nil else{
+                ProgressHUD.showError(error?.localizedDescription)
+                return
+            }
+            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar")as! UITabBarController
+//            let nav = UINavigationController(rootViewController: controller)
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .flipHorizontal
+            self?.present(controller, animated: true, completion: nil)
+            UserDefaults.standard.hasLogin = true
+            ProgressHUD.dismiss()
+        }
+    }
+    //sign up
+    @IBAction func signupButtonTapped(_ sender: UIButton) {
+        let controller = RegisterViewController.instantiate()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     @IBAction func checkmarkButtonTapped(_ sender: UIButton) {
         if !isChecked{
             checkmarkButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
@@ -46,13 +73,6 @@ class SigninViewController: UIViewController {
             checkmarkButton.setImage(UIImage(systemName: "xmark"), for: .normal)
             isChecked = false
         }
-    }
-    @IBAction func signinButtonTapped(_ sender: UIButton) {
-        print("Log in :)")
-    }
-    @IBAction func signupButtonTapped(_ sender: UIButton) {
-        let controller = RegisterViewController.instantiate()
-        navigationController?.pushViewController(controller, animated: true)
     }
     
     

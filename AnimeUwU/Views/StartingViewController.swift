@@ -46,8 +46,6 @@ class StartingViewController: UIViewController {
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
         let controller = RegisterViewController.instantiate()
         navigationController?.pushViewController(controller, animated: true)
-        
-        
     }
     
 }

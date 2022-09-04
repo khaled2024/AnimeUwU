@@ -19,6 +19,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         setGradientBackground()
     }
+    // set gradient
     func setGradientBackground() {
         let colorTop = UIColor.clear.cgColor
         let colorBottom = UIColor.black.withAlphaComponent(0.8).cgColor

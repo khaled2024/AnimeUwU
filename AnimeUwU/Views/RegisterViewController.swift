@@ -6,10 +6,11 @@
 //
 
 import UIKit
-
+import ProgressHUD
+import Firebase
 class RegisterViewController: UIViewController {
     
-    
+    //MARK: - outlets & vars
     @IBOutlet weak var passwordImageView: UIImageView!
     @IBOutlet weak var emailImageView: UIImageView!
     @IBOutlet weak var passwordTF: UITextField!
@@ -25,8 +26,10 @@ class RegisterViewController: UIViewController {
         emailTF.delegate = self
         setUpDesign()
         
+        
     }
     
+    //MARK: - private functions
     func setUpDesign(){
         self.checkmarkButton.layer.cornerRadius = 10
         self.checkmarkButton.layer.borderColor = UIColor.systemGreen.cgColor
@@ -50,7 +53,21 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
-        print("created successfully")
+        guard let email = emailTF.text ,!email.isEmpty , let pass = passwordTF.text ,!pass.isEmpty else{
+            ProgressHUD.showError("Missing field data!")
+            return
+        }
+        // firebase Auth
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: pass) {[weak self] _, error in
+            guard error == nil else{
+                ProgressHUD.showError(error?.localizedDescription)
+                return
+            }
+            ProgressHUD.showSuccess("Your account created Successfuly 😎", image: .checkmark, interaction: true)
+            let controller = SigninViewController.instantiate()
+            self?.navigationController?.pushViewController(controller, animated: true)
+        }
+        
     }
     @IBAction func signinButtonTapped(_ sender: UIButton) {
         let controller = SigninViewController.instantiate()

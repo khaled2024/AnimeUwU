@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopHitsAnimeCollectionViewCell" id="gTV-IL-0wX" customClass="TopHitsAnimeCollectionViewCell" customModule="AnimeUwU" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="269" height="312"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="269" height="312"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J79-OF-lDK">
+                        <rect key="frame" x="0.0" y="0.0" width="269" height="312"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swordArtOnline2" translatesAutoresizingMaskIntoConstraints="NO" id="BCA-ug-Gk8">
+                                <rect key="frame" x="0.0" y="0.0" width="269" height="312"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5V-TZ-ypE">
+                                <rect key="frame" x="15" y="15" width="30" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMd-cI-wZb">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.28785347570000003" green="0.71764707569999997" blue="0.0063218126860000003" alpha="0.94163907284768211" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="rMd-cI-wZb" secondAttribute="bottom" id="1ZM-qM-Ojx"/>
+                                    <constraint firstItem="rMd-cI-wZb" firstAttribute="leading" secondItem="l5V-TZ-ypE" secondAttribute="leading" id="FRd-vQ-gGP"/>
+                                    <constraint firstAttribute="height" constant="30" id="mlW-ej-SRG"/>
+                                    <constraint firstAttribute="trailing" secondItem="rMd-cI-wZb" secondAttribute="trailing" id="nIi-25-faA"/>
+                                    <constraint firstItem="rMd-cI-wZb" firstAttribute="top" secondItem="l5V-TZ-ypE" secondAttribute="top" id="pLJ-7M-cOj"/>
+                                    <constraint firstAttribute="width" constant="30" id="yWa-fG-ZOd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BCA-ug-Gk8" firstAttribute="top" secondItem="J79-OF-lDK" secondAttribute="top" id="4Fl-RN-ubd"/>
+                            <constraint firstItem="BCA-ug-Gk8" firstAttribute="leading" secondItem="J79-OF-lDK" secondAttribute="leading" id="Asx-ej-mX4"/>
+                            <constraint firstItem="l5V-TZ-ypE" firstAttribute="leading" secondItem="J79-OF-lDK" secondAttribute="leading" constant="15" id="GVW-WQ-06V"/>
+                            <constraint firstAttribute="trailing" secondItem="BCA-ug-Gk8" secondAttribute="trailing" id="RqP-l3-Pj5"/>
+                            <constraint firstAttribute="bottom" secondItem="BCA-ug-Gk8" secondAttribute="bottom" id="jU6-6b-OPR"/>
+                            <constraint firstItem="l5V-TZ-ypE" firstAttribute="top" secondItem="J79-OF-lDK" secondAttribute="top" constant="15" id="zlI-kq-ATs"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="J79-OF-lDK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="79H-3Y-ci3"/>
+                <constraint firstItem="J79-OF-lDK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Myc-Dl-jS7"/>
+                <constraint firstAttribute="trailing" secondItem="J79-OF-lDK" secondAttribute="trailing" id="pon-YR-QYl"/>
+                <constraint firstAttribute="bottom" secondItem="J79-OF-lDK" secondAttribute="bottom" id="y6g-UL-ml5"/>
+            </constraints>
+            <size key="customSize" width="269" height="312"/>
+            <connections>
+                <outlet property="animeImage" destination="BCA-ug-Gk8" id="HwS-ge-Fh8"/>
+                <outlet property="ratingLable" destination="rMd-cI-wZb" id="iG8-ai-PYw"/>
+            </connections>
+            <point key="canvasLocation" x="290.57971014492756" y="149.33035714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="swordArtOnline2" width="720" height="368"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
