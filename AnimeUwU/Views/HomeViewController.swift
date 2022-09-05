@@ -118,6 +118,16 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         }
         
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == topHitsAnimeCollectionView {
+            let animeDetails = AnimeDetailViewController.instantiate()
+            navigationController?.pushViewController(animeDetails, animated: true)
+        }else{
+            let animeDetails = AnimeDetailViewController.instantiate()
+            navigationController?.pushViewController(animeDetails, animated: true)
+        }
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)

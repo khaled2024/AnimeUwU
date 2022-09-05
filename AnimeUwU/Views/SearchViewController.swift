@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SearchViewController: UIViewController  {
-    
+class SearchViewController: UIViewController {
+    //MARK: - vars & outlets
     @IBOutlet weak var topSearchTableView: UITableView!
     private let searchController: UISearchController = {
         let result = SearchResultViewController()
@@ -24,6 +24,7 @@ class SearchViewController: UIViewController  {
         super.viewDidLoad()
         title = "Search"
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -39,18 +40,26 @@ class SearchViewController: UIViewController  {
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.tintColor = .label
+        navigationItem.backBarButtonItem?.tintColor = .white
+        navigationItem.backButtonTitle = ""
     }
     
 }
-//MARK: - extensions
-extension SearchViewController: UISearchResultsUpdating{
+//MARK: - UISearchResultsUpdating , UISearchBarDelegate
+extension SearchViewController: UISearchResultsUpdating , UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text , !text.trimmingCharacters(in: .whitespaces).isEmpty else{
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let resultController = searchController.searchResultsController as? SearchResultViewController
+                ,let query = searchBar.text , !query.trimmingCharacters(in: .whitespaces).isEmpty else{
             return
         }
-        print(text)
+//هنا الفانكشن الابديت بتشتغل لما اضغط علي enter ف الكيبورد فلما انا ادخل علي السيرش العادي من غير مكتب حاجه واسرش عليها بيظهرلي التابل فيو ع هوا معمول كده كده ف الview did load لما اجي اعمل data base هعمل الresult الي رايحه للسيرش ف حيث كده التابل فيو هيتفعل بس لما اضغط علي enter :(
+        resultController.update(text: query)
+        print(query)
     }
 }
+//MARK: - UITableViewDelegate , UITableViewDataSource
 extension SearchViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         topSearchAnimes.count
@@ -63,30 +72,26 @@ extension SearchViewController : UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 150
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let view = UIView()
-        view.backgroundColor = .systemGreen
-        if section == 0{
-            return "Top Searchs"
-        }
-        return nil
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let animeDetails = AnimeDetailViewController.instantiate()
+        navigationController?.pushViewController(animeDetails, animated: true)
+        animeDetails.navigationItem.backBarButtonItem?.tintColor = .white
     }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            let view = UIView()
-            view.backgroundColor = .clear
-            let image = UIImageView.init(image: UIImage(named: "topSearch"))
-            image.frame = CGRect(x: 10, y: 5, width: 35, height: 35)
-            view.addSubview(image)
-            let lable = UILabel()
-            lable.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-            lable.frame = CGRect(x: 45, y: 5, width: 100, height: 35)
-            lable.text = "Top Searchs"
-            view.addSubview(lable)
-            return view
-        
+        let view = UIView()
+        view.backgroundColor = .clear
+        let image = UIImageView.init(image: UIImage(named: "topSearch"))
+        image.frame = CGRect(x: 10, y: 5, width: 35, height: 35)
+        view.addSubview(image)
+        let lable = UILabel()
+        lable.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        lable.frame = CGRect(x: 45, y: 5, width: 100, height: 35)
+        lable.text = "Top Searchs"
+        view.addSubview(lable)
+        return view
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45

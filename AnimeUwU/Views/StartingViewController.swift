@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import AuthenticationServices
+import GoogleSignIn
 class StartingViewController: UIViewController {
     
     @IBOutlet weak var appleView: UIView!
@@ -37,6 +38,12 @@ class StartingViewController: UIViewController {
     @IBAction func googleBtnTapped(_ sender: UIButton) {
     }
     @IBAction func appleBtnTapped(_ sender: UIButton) {
+        let appleIDDetails = ASAuthorizationAppleIDProvider()
+        let request = appleIDDetails.createRequest()
+        request.requestedScopes = [.email , .fullName]
+        let controller  = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.performRequests()
     }
     @IBAction func signinPasswordBtnTapped(_ sender: UIButton) {
         let controller = SigninViewController.instantiate()
@@ -48,4 +55,17 @@ class StartingViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+}
+//MARK: - apple delegate
+extension StartingViewController: ASAuthorizationControllerDelegate{
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let details =  authorization.credential as? ASAuthorizationAppleIDCredential{
+            print(details.user)
+            print(details.fullName!)
+            print(details.email!)
+        }
+    }
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error.localizedDescription)
+    }
 }

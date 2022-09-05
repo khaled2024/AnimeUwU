@@ -11,5 +11,5 @@ pod 'Firebase/Auth'
 pod "ProgressHUD"
 pod "IQKeyboardManagerSwift"
 
-
+pod "GoogleSignIn"
 end

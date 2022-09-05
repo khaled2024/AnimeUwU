@@ -8,6 +8,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import Firebase
+import GoogleSignIn
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

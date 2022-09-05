@@ -16,6 +16,8 @@ class TopHitsAnimeViewController: UIViewController {
         title = "Top Hits Anime"
         let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .semibold)]
         UINavigationBar.appearance().titleTextAttributes = attributes
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
         topHitsAnime = [
             Anime(image: UIImage(named: "swordArtOnline2")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
             Anime(image: UIImage(named: "swordArtOnline")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
@@ -28,6 +30,7 @@ class TopHitsAnimeViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.tintColor = .label
+        navigationItem.backButtonTitle = ""
         
     }
     func registerCell(){
@@ -45,6 +48,11 @@ extension TopHitsAnimeViewController: UITableViewDelegate,UITableViewDataSource 
         let anime = topHitsAnime[indexPath.row]
         cell.config(anime: AnimeTopHitsViewModel(image: anime.image, rating: anime.rating, title: anime.title, year: anime.year, description: anime.description))
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let animeDetails = AnimeDetailViewController.instantiate()
+        navigationController?.pushViewController(animeDetails, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200

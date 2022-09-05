@@ -14,6 +14,10 @@ class NewEpisodeReleasesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "New Episode Releases"
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 19, weight: .regular)]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
         newEpisodeAnimes = [
             Anime(image: UIImage(named: "swordArtOnline2")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
             Anime(image: UIImage(named: "swordArtOnline2")!, rating: "9.9", title: "Sword art online", year: "2020", description: "Sword art online Sword art online Sword art online Sword art online Sword art online Sword art online", episodeName: "Episode 10"),
@@ -31,6 +35,8 @@ class NewEpisodeReleasesViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.tintColor = .label
+        navigationItem.backBarButtonItem?.tintColor = .white
+        navigationItem.backButtonTitle = ""
     }
 
 }
@@ -49,6 +55,11 @@ extension NewEpisodeReleasesViewController: UICollectionViewDelegate,UICollectio
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 200, height: 300)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let animeDetails = AnimeDetailViewController.instantiate()
+        navigationController?.pushViewController(animeDetails, animated: true)
     }
     
     
